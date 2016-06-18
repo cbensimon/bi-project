@@ -45,8 +45,11 @@ $ ->
 					#gData = google.visualization.arrayToDataTable data
 
 					options =
-					  title: 'Company Performance'
+					  title: 'Répartition des prix'
 					  curveType: 'function'
+					  # hAxis:
+					  # 	minValue: 0
+					  # 	maxValue: 10000
 					  legend:
 					  	position: 'bottom'
 
