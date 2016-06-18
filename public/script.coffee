@@ -14,9 +14,7 @@ $ ->
 			url: '/'
 			data: JSON.stringify
 				query: query
-			success: (data) -> 
-
-				console.log data
+			success: (data) ->
 
 				google.charts.setOnLoadCallback ->
 
