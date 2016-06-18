@@ -1,0 +1,5 @@
+data
+backup
+node_modules
+*.js
+*.DS_STORE

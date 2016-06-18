@@ -1,0 +1,14 @@
+body {
+	width: 1024px;
+	margin: auto;
+	text-align: center;
+}
+
+#search-form input[type=text] {
+	width: 560px;
+	margin: 27px auto 0;
+}
+
+#search-form input[type=submit] {
+	margin-top: 11px;
+}

@@ -1,0 +1,29 @@
+NodeJS Crawling
+	X-ray module
+
+MongoDB Storing
+	Powerful textSearch
+
+Parcourir les pages dans le sens inverse
+
+J’essaye avec 10.000 pages soit 350.000 annonces
+	Île de France
+	Correspond à ~4 jours d’annonces
+
+Maximum sur le site : ~100.000 pages soit 3.500.000 annonces (Île de France)
+	J’essayerai si je ne me fais pas bloquer
+
+Data
+	Title
+	Price
+	Date
+	Category
+	Location
+	Images
+
+Multiples analyses (catégories selon heure, prix selon catégorie…)
+
+Estimation de densité (somme des gaussiennes)
+fait en python
+communication node <-> python
+	
