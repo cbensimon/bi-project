@@ -2,11 +2,12 @@ import sys, json
 import numpy as np
 
 N = 1000
-sigma = 100
 
 values = json.loads(sys.stdin.readlines()[0])
 
 D = np.array(values)
+
+sigma = D.max()/10.0
 
 def density(x):
 	return np.exp(-(((D - x)**2)/(2*sigma**2))).sum()
