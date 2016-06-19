@@ -32,7 +32,7 @@ J’ai fixé les locations pour pouvoir bien agrégger par la suite
 Bons exemples :
 iphone 3G, 3GS, 4, 4S, 5, 5S, 6, 6S, 6S Plus
 iPad Air, Air 2, Pro
-Mercedes, Citroen, Dacia
+Mercedes, Citroen, Dacia Duster
 Crayon, Appartement, Studio, Maison
 Xmax, Tmax
 
