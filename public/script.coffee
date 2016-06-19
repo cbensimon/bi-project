@@ -7,6 +7,8 @@ $ ->
 	$form.submit (e) ->
 		e.preventDefault()
 
+		button = $form.find('[type=submit]')
+		button.button 'loading'
 		query = $form.find('#query').val()
 		$.ajax
 			type: 'POST'
@@ -17,6 +19,8 @@ $ ->
 			success: (data) ->
 
 				console.log data
+
+				button.button 'reset'
 
 				google.charts.setOnLoadCallback ->
 
