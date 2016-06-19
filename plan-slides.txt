@@ -1,0 +1,27 @@
+Crawling
+  Annonces Leboncoin.fr
+    Ile de France
+    100K pages 3.5M annonces
+    Titre, Prix, catégorie, département, date
+  Web scrapping
+    NodeJS
+    X-ray module (request, parsing, CSS queries, toJSON)
+    Traitements regex (extract price, date, location)
+
+Stockage
+  MongoDB (node.js driver)
+    Grand nombre de documents (lenteur SQL grandes tables)
+    Intégration dans l’environnement js (mode)
+    Je n’ai pas besoin de relations
+
+Traitements
+  Traitements mathématiques faits en Python
+  Communication node python bidirectionnelle via stdin, stdout
+  Un seul traitement : calcul de la courbe d’estimation de densité des prix
+    Formule
+
+Interface utilisateur
+  Page statique
+  Appels ajax au serveur
+    Le serveur query la db et fait les calculs en python puis retourne résultat
+  Google chart pour exploiter les résultats
