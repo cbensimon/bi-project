@@ -1,8 +1,15 @@
+Introduction
+  Motivations
+  Présentation
+    Icones leboncoin, node, mongo, python, google chart
+    Image finale
+
 Crawling
   Annonces Leboncoin.fr
     Ile de France
     100K pages 3.5M annonces
     Titre, Prix, catégorie, département, date
+    Image leboncoin
   Web scrapping
     NodeJS
     X-ray module (request, parsing, CSS queries, toJSON)
@@ -11,7 +18,7 @@ Crawling
 Stockage
   MongoDB (node.js driver)
     Grand nombre de documents (lenteur SQL grandes tables)
-    Intégration dans l’environnement js (mode)
+    JSON : Intégration dans l’environnement js (node)
     Je n’ai pas besoin de relations
 
 Traitements
@@ -25,3 +32,15 @@ Interface utilisateur
   Appels ajax au serveur
     Le serveur query la db et fait les calculs en python puis retourne résultat
   Google chart pour exploiter les résultats
+
+Exemples
+
+Améliorations ?
+  Crawling temps réel
+  Gestion des dates
+  Possibilité de filtrage catégories
+  Toute la France
+  Utilité leboncoin (pas de la BI)
+    Suggérer utilisateur répartition prix de son bien en fonction du titre
+    Avertir si doute sur la catégorie, incohérence du prix
+  

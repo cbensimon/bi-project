@@ -48,4 +48,19 @@ Autre
   Booba
 
 Pas oublier répartition horaire
-	
+
+Exemples :
+Cote occasion
+  (nike air, stan smith, iPhone 6S, Dacia Duster…)
+  Location studio
+  Explication répartition car plusieurs catégories
+  Du coup montrer catégories mal utilisées (location voitures)
+Marques multi catégories
+Marque une seule catégorie
+Influence département
+  Nike / Adidas
+  Apple / Huawei
+  Citroën C3 / Mercedes classe A / Porsche Cayenne
+  Maison / studio
+    Mais aussi répartition prix
+    Explication prix avec catégories (vente, location)	
