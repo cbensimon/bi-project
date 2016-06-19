@@ -16,7 +16,7 @@ MongoClient.connect "mongodb://localhost:27017/#{dbName}", (err, db) ->
 			console.log 'Over'
 			return
 		else if doc.location.match /paris/i
-			doc.location = 'paris'
+			doc.location = 'Paris'
 		else if doc.location.match /\//
 			doc.location = doc.location.match(/\/\s*(.*)/)[1]
 
