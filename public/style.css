@@ -12,3 +12,10 @@ body {
 #search-form input[type=submit] {
 	margin-top: 11px;
 }
+
+#curve_chart,
+#category_chart {
+	width: 900px;
+	height: 500px;
+	margin: auto;
+}
