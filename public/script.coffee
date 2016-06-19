@@ -33,6 +33,9 @@ $ ->
 					chart = new google.visualization.PieChart document.getElementById 'category_chart'
 					chart.draw gData, options
 
+					google.visualization.events.addListener chart, 'onmouseover', (e) ->
+						console.log categories[e.row+1][0]
+
 				google.charts.setOnLoadCallback ->
 
 					density = data.density
