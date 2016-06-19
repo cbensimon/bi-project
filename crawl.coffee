@@ -43,15 +43,18 @@ Series [
 					print 'requesting...'
 				(err, obj) ->
 					@_error err
-					db.collection('annonces').insert obj, @_then()
+					if obj and obj.length
+						db.collection('annonces').insert obj, @_then()
+					else
+						@_end()
 					print 'inserting...'
 				(err, res) ->
 					@_error err
 					print res.result
-					setTimeout @_then(), 200
-				->
-					callback()
-			], (err) -> throw err
+					setTimeout @_end(), 0
+			], (err) ->
+				console.log err if err
+				callback()
 
 		q.drain = -> print 'All pages Added'
 		q.push [N..1]
