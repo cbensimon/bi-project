@@ -16,21 +16,40 @@ $ ->
 				query: query
 			success: (data) ->
 
+				console.log data
+
 				google.charts.setOnLoadCallback ->
+
+					categories = data.categories
+					categories.unshift ['Category', 'Count']
+
+					gData = google.visualization.arrayToDataTable categories
+
+					options =
+						title: 'Répartition des catégories'
+						reverseCategories: true
+						sliceVisibilityThreshold: .05
+
+					chart = new google.visualization.PieChart document.getElementById 'category_chart'
+					chart.draw gData, options
+
+				google.charts.setOnLoadCallback ->
+
+					density = data.density
 
 					max =
 						index: 0
-						value: data[0][1]
-					for v, i in data
+						value: density[0][1]
+					for v, i in density
 						if v[1] > max.value
 							max.value = v[1]
 							max.index = i
 
-					for v, i in data
+					for v, i in density
 						if i == max.index
-							data[i] = [v[0], v[1], numeral(v[0]).format('0,0.00')+ ' €']
+							density[i] = [v[0], v[1], numeral(v[0]).format('0,0.00')+ ' €']
 						else
-							data[i] = [v[0], v[1], null]
+							density[i] = [v[0], v[1], null]
 
 					gData = new google.visualization.DataTable()
 					gData.addColumn 'number', 'Price'
@@ -38,9 +57,7 @@ $ ->
 					gData.addColumn
 						type: 'string'
 						role: 'annotation'
-					gData.addRows data
-
-					#gData = google.visualization.arrayToDataTable data
+					gData.addRows density
 
 					options =
 					  title: 'Répartition des prix'

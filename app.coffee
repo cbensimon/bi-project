@@ -1,4 +1,5 @@
 express = require 'express'
+Async = require 'async'
 MongoClient = require('mongodb').MongoClient
 Python = require './python'
 app = express()
@@ -16,23 +17,54 @@ MongoClient.connect "mongodb://localhost:27017/#{dbName}", (err, db) ->
 
 	app.post '/', (req, res) ->
 
-		searchQuery = req.body.query
-
 		query =
 			'$text':
-				'$search': "\"#{searchQuery}\""
-		fields =
-			'_id': false
-			'price': true
-		db.collection('annonces')
-			.find query, fields
-			.toArray (err, docs) ->
-				throw err if err
+				'$search': "\"#{req.body.query}\""
 
-				values = docs.map (v) -> v.price
-				values = values.filter (v) -> v > 0
+		data = {}
 
-				Python.density values, (pyRes) ->
-					res.send pyRes
+		Async.parallel [
+
+			(callback) ->
+
+				fields =
+					'_id': false
+					'price': true
+				db.collection('annonces')
+					.find query, fields
+					.toArray (err, docs) ->
+						throw err if err
+
+						values = docs.map (v) -> v.price
+						values = values.filter (v) -> v > 0
+
+						Python.density values, (pyRes) ->
+							data.density = pyRes
+							callback()
+
+			(callback) ->
+				$match =
+					$match: query
+				$group =
+					$group:
+						'_id': '$category'
+						'count':
+							'$sum': 1
+				db.collection('annonces')
+					.aggregate [$match, $group]
+					.sort
+						count: -1
+					.toArray (err, docs) ->
+						throw err if err
+						categories = docs.map (v) -> [v._id, v.count]
+						data.categories = categories
+						callback()
+
+
+
+		], (err) ->
+			throw err if err
+			console.log  data
+			res.send data
 
 	app.listen(8080)
