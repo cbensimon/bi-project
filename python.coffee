@@ -9,7 +9,6 @@ density = (values, callback) ->
 	shell.send values
 
 	shell.on 'message', (message) ->
-		console.log message
 		callback message
 
 	shell.end (err, res) ->
