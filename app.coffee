@@ -60,6 +60,24 @@ MongoClient.connect "mongodb://localhost:27017/#{dbName}", (err, db) ->
 						data.categories = categories
 						callback()
 
+			(callback) ->
+				$match =
+					$match: query
+				$group =
+					$group:
+						'_id': '$location'
+						'count':
+							'$sum': 1
+				db.collection('annonces2')
+					.aggregate [$match, $group]
+					.sort
+						count: -1
+					.toArray (err, docs) ->
+						throw err if err
+						locations = docs.map (v) -> [v._id, v.count]
+						data.locations = locations
+						callback()
+
 
 
 		], (err) ->

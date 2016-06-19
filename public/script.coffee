@@ -38,6 +38,19 @@ $ ->
 
 				google.charts.setOnLoadCallback ->
 
+					locations = data.locations
+					locations.unshift ['Location', 'Nombre d\'annonces']
+
+					gData = google.visualization.arrayToDataTable locations
+
+					options =
+						title: 'Répartition des départements'
+
+					chart = new google.visualization.ColumnChart document.getElementById 'location_chart'
+					chart.draw gData, options
+
+				google.charts.setOnLoadCallback ->
+
 					density = data.density
 
 					max =
