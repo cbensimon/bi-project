@@ -37,6 +37,9 @@ Voitures
   Mercedes classe A
   Citroen C3
   Dacia Duster
+Chaussures
+  Nike Air
+  Stan Smith
 Autre
   Location studio
   Crayon, Appartement, Studio, Maison
