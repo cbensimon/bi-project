@@ -30,11 +30,19 @@ communication node <-> python
 J’ai fixé les locations pour pouvoir bien agrégger par la suite
 
 Bons exemples :
-iphone 3G, 3GS, 4, 4S, 5, 5S, 6, 6S, 6S Plus
-iPad Air, Air 2, Pro
-Mercedes, Citroen, Dacia Duster
-Crayon, Appartement, Studio, Maison
-Xmax, Tmax
+Apple
+  iphone 3G, 3GS, 4, 4S, 5, 5S, 6, 6S, 6S Plus
+  iPad Air, Air 2, Pro
+Voitures
+  Mercedes classe A
+  Citroen C3
+  Dacia Duster
+Autre
+  Location studio
+  Crayon, Appartement, Studio, Maison
+  Xmax / Tmax -> Prix
+  Huawei / Apple -> Location
+  Booba
 
 Pas oublier répartition horaire
 	
