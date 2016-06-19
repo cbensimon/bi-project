@@ -64,7 +64,6 @@ MongoClient.connect "mongodb://localhost:27017/#{dbName}", (err, db) ->
 
 		], (err) ->
 			throw err if err
-			console.log  data
 			res.send data
 
 	app.listen(8080)
