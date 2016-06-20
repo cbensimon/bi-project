@@ -18,8 +18,6 @@ $ ->
 				query: query
 			success: (data) ->
 
-				console.log data
-
 				button.button 'reset'
 
 				google.charts.setOnLoadCallback ->
@@ -57,20 +55,6 @@ $ ->
 
 					density = data.density
 
-					# max =
-					# 	index: 0
-					# 	value: density[0][1]
-					# for v, i in density
-					# 	if v[1] > max.value
-					# 		max.value = v[1]
-					# 		max.index = i
-
-					# for v, i in density
-					# 	if i == max.index
-					# 		density[i] = [v[0], v[1], numeral(v[0]).format('0,0.00')+ ' €']
-					# 	else
-					# 		density[i] = [v[0], v[1], null]
-
 					for v, i in density
 						if v[2] == 0
 							v[2] = null
@@ -88,9 +72,6 @@ $ ->
 					options =
 					  title: 'Répartition des prix'
 					  curveType: 'function'
-					  # hAxis:
-					  # 	minValue: 0
-					  # 	maxValue: 10000
 					  legend:
 					  	position: 'bottom'
 
