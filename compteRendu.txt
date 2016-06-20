@@ -63,4 +63,19 @@ Influence département
   Citroën C3 / Mercedes classe A / Porsche Cayenne
   Maison / studio
     Mais aussi répartition prix
-    Explication prix avec catégories (vente, location)	
+    Explication prix avec catégories (vente, location)
+
+Choix final exemples :
+iPod Touch :
+  -Deux pics de prix
+iPod Touch / iPad Mini :
+  -Catégories différentes !
+iPhone 5S, 6S, 6S Plus
+Nike / Addidas :
+  - Catégorie
+  - Départements
+Citroen C3 :
+  - Prix : équipement, et 2 modèles
+  - Département : Paris en dernier
+Porsche Cayenne :
+  - Département : Paris en premier
