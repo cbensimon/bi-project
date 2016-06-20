@@ -6,7 +6,7 @@ N = 1000
 values = json.loads(sys.stdin.readlines()[0])
 
 D = np.array(values)
-maxValue = np.percentile(D, 99)/0.99
+maxValue = np.percentile(D, 96)/0.96
 
 sigma = maxValue/10.0
 
