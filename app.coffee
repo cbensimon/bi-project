@@ -30,7 +30,7 @@ MongoClient.connect "mongodb://localhost:27017/#{dbName}", (err, db) ->
 				fields =
 					'_id': false
 					'price': true
-				db.collection('annonces')
+				db.collection('annonces2')
 					.find query, fields
 					.toArray (err, docs) ->
 						throw err if err
@@ -50,7 +50,7 @@ MongoClient.connect "mongodb://localhost:27017/#{dbName}", (err, db) ->
 						'_id': '$category'
 						'count':
 							'$sum': 1
-				db.collection('annonces')
+				db.collection('annonces2')
 					.aggregate [$match, $group]
 					.sort
 						count: -1
