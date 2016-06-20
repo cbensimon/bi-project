@@ -57,19 +57,25 @@ $ ->
 
 					density = data.density
 
-					max =
-						index: 0
-						value: density[0][1]
-					for v, i in density
-						if v[1] > max.value
-							max.value = v[1]
-							max.index = i
+					# max =
+					# 	index: 0
+					# 	value: density[0][1]
+					# for v, i in density
+					# 	if v[1] > max.value
+					# 		max.value = v[1]
+					# 		max.index = i
+
+					# for v, i in density
+					# 	if i == max.index
+					# 		density[i] = [v[0], v[1], numeral(v[0]).format('0,0.00')+ ' €']
+					# 	else
+					# 		density[i] = [v[0], v[1], null]
 
 					for v, i in density
-						if i == max.index
-							density[i] = [v[0], v[1], numeral(v[0]).format('0,0.00')+ ' €']
+						if v[2] == 0
+							v[2] = null
 						else
-							density[i] = [v[0], v[1], null]
+							v[2] = numeral(v[0]).format('0,0.00')+ ' €'
 
 					gData = new google.visualization.DataTable()
 					gData.addColumn 'number', 'Price'
